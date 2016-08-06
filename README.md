@@ -9,3 +9,14 @@ There are two types of these libraries:
 
 Besides these kinds of libraries, there are the ones which are highly specific to certain Atmel chips. These can not be strictly called Wiring/Arduino libraries. These are actually just a C/C++ code written for Atmel controller(s) and are using Wiring or Arduino IDE simply as a means to compile the code and upload it to the Atmel chip. Good example of this kind of code is GRBL. Of course, these kind of libraries (or applications) are not portable and can't be included here.
 
+## List of included libraries
+
+- Adafruit_GFX
+- Adafruit_Sensor
+- Adafruit_ST7735
+- Adafruit_ADXL345_U
+- Adafruit_BMP085
+- Adafruit_L3GD20_U
+- Adafruit_LSM303_U
+- Adafruit_PWMServoDriver
+- Adafruit_TCS34725
