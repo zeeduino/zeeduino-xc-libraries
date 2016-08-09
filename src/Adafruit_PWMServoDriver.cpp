@@ -15,7 +15,7 @@
   BSD license, all text above must be included in any redistribution
  ****************************************************/
 
-#include "contrib/adafruit/Adafruit_PWMServoDriver.h"
+#include "Adafruit_PWMServoDriver.h"
 #include "lib/Wire.h"
 
 #define __AVR__

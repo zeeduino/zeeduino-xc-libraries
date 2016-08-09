@@ -29,7 +29,7 @@
 #include "lib/Wire.h"
 #include <limits.h>
 
-#include "contrib/adafruit/Adafruit_ADXL345_U.h"
+#include "Adafruit_ADXL345_U.h"
 
 /**************************************************************************/
 /*!

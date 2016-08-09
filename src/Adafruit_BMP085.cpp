@@ -15,7 +15,7 @@
   BSD license, all text above must be included in any redistribution
  ****************************************************/
 
-#include "contrib/adafruit/Adafruit_BMP085.h"
+#include "Adafruit_BMP085.h"
 
 
 Adafruit_BMP085::Adafruit_BMP085() {

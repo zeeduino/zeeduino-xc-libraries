@@ -20,7 +20,7 @@
 #include <stdlib.h>
 #include <math.h>
 
-#include "contrib/adafruit/Adafruit_TCS34725.h"
+#include "Adafruit_TCS34725.h"
 
 /*========================================================================*/
 /*                          PRIVATE FUNCTIONS                             */

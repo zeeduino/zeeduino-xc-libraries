@@ -21,7 +21,7 @@ as well as Adafruit raw 1.8" TFT display
   MIT license, all text above must be included in any redistribution
  ****************************************************/
 
-#include "contrib/adafruit/Adafruit_ST7735.h"
+#include "Adafruit_ST7735.h"
 #include <limits.h>
 #include "lib/SPI.h"
 

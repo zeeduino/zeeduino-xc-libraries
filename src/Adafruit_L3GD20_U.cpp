@@ -24,7 +24,7 @@
 #include "lib/Wire.h"
 #include <limits.h>
 
-#include "contrib/adafruit/Adafruit_L3GD20_U.h"
+#include "Adafruit_L3GD20_U.h"
 
 /***************************************************************************
  PRIVATE FUNCTIONS
