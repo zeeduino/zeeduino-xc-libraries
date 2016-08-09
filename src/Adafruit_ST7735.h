@@ -31,7 +31,7 @@ as well as Adafruit raw 1.8" TFT display
  #include "WProgram.h"
 #endif
 
-#include "contrib/adafruit/Adafruit_GFX.h"
+#include "Adafruit_GFX.h"
 
 #if defined(__SAM3X8E__)
   #include <include/pio.h>
@@ -51,7 +51,7 @@ as well as Adafruit raw 1.8" TFT display
 #endif
 
 #include "lib/SPI.h"
-#include "contrib/adafruit/fixes.h"
+#include "fixes.h"
 
 // some flags for initR() :(
 #define INITR_GREENTAB 0x0
