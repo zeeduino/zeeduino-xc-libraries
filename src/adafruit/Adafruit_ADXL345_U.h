@@ -76,22 +76,22 @@
 /* Used with register 0x2C (ADXL345_REG_BW_RATE) to set bandwidth */
 typedef enum
 {
-  ADXL345_DATARATE_3200_HZ    = 0b1111, // 1600Hz Bandwidth   140�A IDD
-  ADXL345_DATARATE_1600_HZ    = 0b1110, //  800Hz Bandwidth    90�A IDD
-  ADXL345_DATARATE_800_HZ     = 0b1101, //  400Hz Bandwidth   140�A IDD
-  ADXL345_DATARATE_400_HZ     = 0b1100, //  200Hz Bandwidth   140�A IDD
-  ADXL345_DATARATE_200_HZ     = 0b1011, //  100Hz Bandwidth   140�A IDD
-  ADXL345_DATARATE_100_HZ     = 0b1010, //   50Hz Bandwidth   140�A IDD
-  ADXL345_DATARATE_50_HZ      = 0b1001, //   25Hz Bandwidth    90�A IDD
-  ADXL345_DATARATE_25_HZ      = 0b1000, // 12.5Hz Bandwidth    60�A IDD
-  ADXL345_DATARATE_12_5_HZ    = 0b0111, // 6.25Hz Bandwidth    50�A IDD
-  ADXL345_DATARATE_6_25HZ     = 0b0110, // 3.13Hz Bandwidth    45�A IDD
-  ADXL345_DATARATE_3_13_HZ    = 0b0101, // 1.56Hz Bandwidth    40�A IDD
-  ADXL345_DATARATE_1_56_HZ    = 0b0100, // 0.78Hz Bandwidth    34�A IDD
-  ADXL345_DATARATE_0_78_HZ    = 0b0011, // 0.39Hz Bandwidth    23�A IDD
-  ADXL345_DATARATE_0_39_HZ    = 0b0010, // 0.20Hz Bandwidth    23�A IDD
-  ADXL345_DATARATE_0_20_HZ    = 0b0001, // 0.10Hz Bandwidth    23�A IDD
-  ADXL345_DATARATE_0_10_HZ    = 0b0000  // 0.05Hz Bandwidth    23�A IDD (default value)
+  ADXL345_DATARATE_3200_HZ    = 0b1111, // 1600Hz Bandwidth   140uA IDD
+  ADXL345_DATARATE_1600_HZ    = 0b1110, //  800Hz Bandwidth    90uA IDD
+  ADXL345_DATARATE_800_HZ     = 0b1101, //  400Hz Bandwidth   140uA IDD
+  ADXL345_DATARATE_400_HZ     = 0b1100, //  200Hz Bandwidth   140uA IDD
+  ADXL345_DATARATE_200_HZ     = 0b1011, //  100Hz Bandwidth   140uA IDD
+  ADXL345_DATARATE_100_HZ     = 0b1010, //   50Hz Bandwidth   140uA IDD
+  ADXL345_DATARATE_50_HZ      = 0b1001, //   25Hz Bandwidth    90uA IDD
+  ADXL345_DATARATE_25_HZ      = 0b1000, // 12.5Hz Bandwidth    60uA IDD
+  ADXL345_DATARATE_12_5_HZ    = 0b0111, // 6.25Hz Bandwidth    50uA IDD
+  ADXL345_DATARATE_6_25HZ     = 0b0110, // 3.13Hz Bandwidth    45uA IDD
+  ADXL345_DATARATE_3_13_HZ    = 0b0101, // 1.56Hz Bandwidth    40uA IDD
+  ADXL345_DATARATE_1_56_HZ    = 0b0100, // 0.78Hz Bandwidth    34uA IDD
+  ADXL345_DATARATE_0_78_HZ    = 0b0011, // 0.39Hz Bandwidth    23uA IDD
+  ADXL345_DATARATE_0_39_HZ    = 0b0010, // 0.20Hz Bandwidth    23uA IDD
+  ADXL345_DATARATE_0_20_HZ    = 0b0001, // 0.10Hz Bandwidth    23uA IDD
+  ADXL345_DATARATE_0_10_HZ    = 0b0000  // 0.05Hz Bandwidth    23uA IDD (default value)
 } dataRate_t;
 
 /* Used with register 0x31 (ADXL345_REG_DATA_FORMAT) to set g range */
@@ -113,7 +113,7 @@ class Adafruit_ADXL345_Unified : public Adafruit_Sensor {
   range_t    getRange(void);
   void       setDataRate(dataRate_t dataRate);
   dataRate_t getDataRate(void);
-  void       getEvent(sensors_event_t*);
+  bool       getEvent(sensors_event_t*);
   void       getSensor(sensor_t*);
 
   uint8_t    getDeviceID(void);
