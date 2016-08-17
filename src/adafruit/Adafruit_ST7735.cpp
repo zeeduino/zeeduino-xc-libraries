@@ -59,6 +59,8 @@ Adafruit_ST7735::Adafruit_ST7735(int8_t cs, int8_t rs, int8_t sid, int8_t sclk, 
 {
   _cs   = cs;
   _rs   = rs;
+  _sid  = sid;
+  _sclk = sclk;
   _rst  = rst;
   hwSPI = false;
   pSPI = &SPI;
@@ -73,6 +75,7 @@ Adafruit_ST7735::Adafruit_ST7735(int8_t cs, int8_t rs, int8_t rst)
   _rs   = rs;
   _rst  = rst;
   hwSPI = true;
+  _sid  = _sclk = 0;
   pSPI = &SPI;
 }
 

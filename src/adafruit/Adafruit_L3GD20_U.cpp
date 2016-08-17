@@ -217,7 +217,7 @@ void Adafruit_L3GD20_Unified::enableAutoRange(bool enabled)
     @brief  Gets the most recent sensor event
 */
 /**************************************************************************/
-void Adafruit_L3GD20_Unified::getEvent(sensors_event_t* event)
+bool Adafruit_L3GD20_Unified::getEvent(sensors_event_t* event)
 {
   bool readingValid = false;
   
@@ -239,11 +239,11 @@ void Adafruit_L3GD20_Unified::getEvent(sensors_event_t* event)
     #else
       Wire.send(GYRO_REGISTER_OUT_X_L | 0x80);
     #endif
-    Wire.endTransmission();
+    if (Wire.endTransmission() != 0) {
+        // Error. Retry.
+        continue;
+    }
     Wire.requestFrom((byte)L3GD20_ADDRESS, (byte)6);
-
-    /* Wait around until enough data is available */
-    while (Wire.available() < 6);
 
     #if ARDUINO >= 100
       uint8_t xlo = Wire.read();
@@ -338,6 +338,8 @@ void Adafruit_L3GD20_Unified::getEvent(sensors_event_t* event)
   event->gyro.x *= SENSORS_DPS_TO_RADS;
   event->gyro.y *= SENSORS_DPS_TO_RADS;
   event->gyro.z *= SENSORS_DPS_TO_RADS;
+  
+  return true;
 }
 
 /**************************************************************************/
