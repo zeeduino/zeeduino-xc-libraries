@@ -164,8 +164,7 @@ boolean Adafruit_TCS34725::begin(void)
   
   /* Make sure we're actually connected */
   uint8_t x = read8(TCS34725_ID);
-
-  if (x != 0x44)
+  if ((x != 0x44) && (x != 0x10))
   {
     return false;
   }
@@ -288,8 +287,7 @@ uint16_t Adafruit_TCS34725::calculateColorTemperature(uint16_t r, uint16_t g, ui
 
 /**************************************************************************/
 /*!
-    @brief  Converts the raw R/G/B values to color temperature in degrees
-            Kelvin
+    @brief  Converts the raw R/G/B values to lux
 */
 /**************************************************************************/
 uint16_t Adafruit_TCS34725::calculateLux(uint16_t r, uint16_t g, uint16_t b)
@@ -317,9 +315,9 @@ void Adafruit_TCS34725::setInterrupt(boolean i) {
 void Adafruit_TCS34725::clearInterrupt(void) {
   Wire.beginTransmission(TCS34725_ADDRESS);
   #if ARDUINO >= 100
-  Wire.write(0x66);
+  Wire.write(TCS34725_COMMAND_BIT | 0x66);
   #else
-  Wire.send(0x66);
+  Wire.send(TCS34725_COMMAND_BIT | 0x66);
   #endif
   Wire.endTransmission();
 }
